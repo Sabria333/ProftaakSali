@@ -1,21 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Contact Us | Clothing Webshop</title>
-  <link rel="stylesheet" type="text/css" href="stylecontact.css">
+  <title>Log In | Clothing Webshop</title>
+  <link rel="stylesheet" type="text/css" href="css/stylecontact.css">
 </head>
 <body>
+<?php 
+include "inc/nav.php";
 
-  <header>
-    <nav>
-      <ul>
-        <li><a href="index.php">Home</a></li>
-        <li><a href="shop.php">Shop</a></li>
-        <li><a href="about.php">about</a></li>
-        <li><a href="contact.php">Contact Us</a></li>
-      </ul>
-    </nav>
-  </header>
+?>
 
   <main>
   <h1>Contact Us</h1>
@@ -27,7 +20,7 @@
         <div class="contact-info">
           <h2>Address:</h2>
           <p>123 Main St</p>
-          <p>Anytown, USA 12345</p>
+          <p>Helmond, NL 12345</p>
 
           <h2>Phone:</h2>
           <p>1-800-123-4567</p>
@@ -53,9 +46,9 @@
       </div>
 
       <div class="right-contact">
-        <img src="1.jpg" alt="Image 1">
-        <img src="2.jpg" alt="Image 2">
-        <img src="3.jpg" alt="Image 3">
+        <img src="img/1.jpg" alt="Girl in a jacket" >
+        <img src="img/2.jpg" alt="Girl in a jacket" >
+        <img src="img/3.jpg" alt="Girl in a jacket" >
       </div>
   </main>
 
@@ -77,3 +70,4 @@
   </footer>
 </body>
 </html>
+<script src="main.js"></script>

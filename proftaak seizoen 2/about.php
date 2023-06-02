@@ -1,21 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>About Us</title>
-  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <title>Contact Us | Clothing Webshop</title>
+  <link rel="stylesheet" type="text/css" href="css/stylecontact.css">
 </head>
 <body>
-  <header>
-    <nav>
-      <ul>
-      <li><a href="index.php">Home</a></li>
-        <li><a href="shop.php">Shop</a></li>
-        <li><a href="about.php">about</a></li>
-        <li><a href="contact.php">Contact Us</a></li>
-      </ul>
-    </nav>
-  </header>
-
+<?php 
+include "inc/nav.php";
+?>
   <main>
     <h1>About Us</h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, neque quis tristique bibendum, ipsum lectus aliquet nunc, vel vulputate quam risus sit amet lacus. Suspendisse gravida, sem eu tristique commodo, nibh nibh luctus est, ac sollicitudin tellus risus vel velit. Nulla facilisi. Vivamus pretium nisi a luctus posuere. Sed pellentesque urna a risus vulputate, ut ullamcorper lacus tincidunt. Sed gravida tortor enim, vel bibendum ex cursus ac. Praesent lacinia elit in elit scelerisque, sit amet accumsan sapien pulvinar.</p>
@@ -34,3 +26,4 @@
   </footer>
 </body>
 </html>
+<script src="main.js"></script>

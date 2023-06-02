@@ -1,26 +1,20 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>My Clothing Webshop</title>
-    <link rel="stylesheet" href="stylesheet.css">
-  </head>
-  <body>
-    <header>
-      <nav>
-        <ul>
-          <li><a href="index.php">Home</a></li>
-          <li><a href="shop.php">Shop</a></li>
-          <li><a href="about.php">About Us</a></li>
-          <li><a href="contact.php">Contact Us</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-      <section class="hero">
-        <h1>Welcome to our Clothing Webshop</h1>
-        <p>Shop for the latest fashion trends and styles</p>
-        <a href="#" class="btn">Shop Now</a>
+<head>
+  <title> Home | Clothing Webshop</title>
+  <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+</head>
+<body>
+<?php 
+include "inc/nav.php";
+
+?>
+<main>
+  <section class="hero">
+  <img src="img/banner.jpg" alt="Girl in a jacket" >
+        <a href="#" class="btn-index">Shop Now</a>
       </section>
+
       <section class="featured">
         <h2>Featured Products</h2>
         <div class="products">
@@ -30,12 +24,14 @@
             <p>$49.99</p>
             <a href="#" class="btn">Add to Cart</a>
           </div>
+
           <div class="product">
             <img src="product2.jpg" alt="Product 2">
             <h3>Product 2</h3>
             <p>$29.99</p>
             <a href="#" class="btn">Add to Cart</a>
           </div>
+
           <div class="product">
             <img src="product3.jpg" alt="Product 3">
             <h3>Product 3</h3>
@@ -63,3 +59,4 @@
     </footer>
   </body>
 </html>
+<script src="main.js"></script>
