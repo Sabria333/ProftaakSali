@@ -1,0 +1,68 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    color: #fff;
+    margin: 0;
+}
+
+#content {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px;
+}
+
+.profile, .team {
+    text-align: center;
+}
+
+.profile h2, .team h2 {
+    margin-top: 0;
+}
+
+.profile p, .team p {
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #ff0000; /* Change to your preferred color */
+}
+
+.team-member {
+    display: inline-block;
+    margin: 20px;
+    text-align: center;
+}
+
+.team-member img {
+    width: 150px;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.team-member h3, .team-member p {
+    margin: 5px 0;
+}
+
+.team-member img:hover {
+    transform: scale(1.1);
+}

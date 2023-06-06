@@ -2,32 +2,25 @@
 <html>
 <head>
 	<title>Shop - My Clothing Store</title>
-	<link rel="stylesheet" type="text/css" href="stylesheet.css">
+	<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
 </head>
 <body>
-	<header>
-		<nav>
-			<ul>
-				<li><a href="index.php">Home</a></li>
-				<li><a href="shop.php">Shop</a></li>
-                <li><a href="about.php">About Us</a></li>
-				<li><a href="contact.php">Contact Us</a></li>
-			</ul>
-		</nav>
-		<h1>My Clothing Store</h1>
-	</header>
+	<?php
+	include "inc/nav.php";
+	?>
+	<h1>My Clothing Store</h1>
 	<main>
 		<h2>Shop</h2>
 		<ul class="product-list">
 			<li class="product">
-				<img src="product1.jpg" alt="Product 1">
+				<img src="img/foursweat.jpg" alt="Product 1">
 				<h3>Product 1</h3>
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget libero ut nunc molestie cursus. Duis malesuada arcu ac felis euismod, ut laoreet velit maximus.</p>
 				<span class="price">$29.99</span>
 				<button>Add to Cart</button>
 			</li>
 			<li class="product">
-				<img src="product2.jpg" alt="Product 2">
+				<img src="img/foursweater.jpg.jfif" alt="Product 2">
 				<h3>Product 2</h3>
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget libero ut nunc molestie cursus. Duis malesuada arcu ac felis euismod, ut laoreet velit maximus.</p>
 				<span class="price">$39.99</span>
