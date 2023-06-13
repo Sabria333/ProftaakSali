@@ -3,10 +3,10 @@
 <head>
   <title>Log In | Clothing Webshop</title>
   <link rel="stylesheet" type="text/css" href="css/stylecontact.css">
-</head>
+  <link rel="stylesheet" href="css/style.css">
 <body>
 <?php 
-include "inc/nav.php";
+include "inc/function.php";
 
 ?>
 
@@ -61,11 +61,15 @@ include "inc/nav.php";
         <li><a href="contact.php">Contact Us</a></li>
       </ul>
 
-      <ul class="social-icons">
-        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-      </ul>
+      <div class="cart" id="cart">
+  <h2>Shopping Cart</h2>
+  <div id="cart-items"></div>
+  <div class="cart-total" id="cart-total"></div>
+  <div class="buy-now-btn">
+    <a href="order.php" class="btn" onclick="storeOrderSummary()">Buy Now</a>
+  </div>
+  <div class="cart-toggle" onclick="toggleCart()">&times;</div>
+  <button onclick="resetCart()">Reset Cart</button>
     </div>
   </footer>
 </body>

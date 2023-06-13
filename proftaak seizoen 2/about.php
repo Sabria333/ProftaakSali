@@ -2,11 +2,15 @@
 <html>
 <head>
   <title>Contact Us | Clothing Webshop</title>
-  <link rel="stylesheet" type="text/css" href="css/stylecontact.css">
+  <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+  <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/stylesheet.css">
+
+    
 </head>
 <body>
 <?php 
-include "inc/nav.php";
+include "inc/function.php";
 ?>
   <main>
     <h1>About Us</h1>
@@ -24,6 +28,17 @@ include "inc/nav.php";
       </ul>
     </div>
   </footer>
+  <div class="cart" id="cart">
+  <h2>Shopping Cart</h2>
+  <div id="cart-items"></div>
+  <div class="cart-total" id="cart-total"></div>
+  <div class="buy-now-btn">
+    <a href="order.php" class="btn" onclick="storeOrderSummary()">Buy Now</a>
+  </div>
+  <div class="cart-toggle" onclick="toggleCart()">&times;</div>
+  <button onclick="resetCart()">Reset Cart</button>
+
+</div>
 </body>
 </html>
 <script src="main.js"></script>

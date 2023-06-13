@@ -1,154 +1,138 @@
+<?php 
+include "inc/function.php";
+
+$products = getProducts();
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
   <title>Shop - My Clothing Store</title>
   <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
-  <style>
-    .cart {
-      position: fixed;
-      top: 0;
-      right: -400px;
-      width: 400px;
-      height: 100%;
-      background-color: white;
-      padding: 20px;
-      box-sizing: border-box;
-      transition: right 0.3s ease-in-out;
-    }
-
-    .cart.open {
-      right: 0;
-    }
-
-    .cart-item {
-      display: flex;
-      justify-content: space-between;
-    }
-
-    .cart-total {
-      margin-top: 20px;
-      font-weight: bold;
-    }
-
-    .cart-toggle {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      font-size: 24px;
-      cursor: pointer;
-    }
-
-    .buy-now-btn {
-      margin-top: 20px;
-      text-align: center;
-    }
-  </style>
+  <link rel="stylesheet" type="text/css" href="css/shop.css">
 </head>
 <body>
-  <?php
-  include "inc/nav.php";
 
-  ?>
   <main>
     <section class="featured">
       <h2>Featured Products</h2>
       <div class="products">
+      <?php
+
+      foreach($products as $product)
+      {
+        ?>
         <div class="product">
+          <a href="detailproduct.php?productId=<?php echo $product['productId']; ?>" target="_blank">
+          <img src="img/<?php echo $product['productImage']; ?>" alt="<?php echo $product['productTitle']; ?>">
+          </a>          
+          <h3><?php echo $product['productTitle']; ?></h3>
+          <p>$ <?php echo $product['productPrice']; ?></p>
+          <a href="#" class="btn" onclick="addToCart(<?php echo $product['productTitle']?>, <?php echo $product['productPrice']?>)">Add to Cart</a>
+        </div>
+        <?php
+      }
+      
+      
+      ?>
+      
+      <!-- <div class="product">
         <a href="detailproduct.php" target="_blank">
-  <img src="img/1.jpg" alt="Girl in a jacket">
-</a>          <h3>product 1</h3>
+  <img src="img/redsweat.jpg.jfif" alt="Girl in a jacket">
+</a>          <h3>Shirt</h3>
           <p>$49.99</p>
           <a href="#" class="btn" onclick="addToCart('Product 1', 49.99)">Add to Cart</a>
         </div>
 
         <div class="product">
         <a href="detailproduct.php" target="_blank">
-  <img src="img/1.jpg" alt="Girl in a jacket">
-</a>          <h3>Product 1</h3>
-          <p>$49.99</p>
-          <a href="#" class="btn" onclick="addToCart('Product 1', 49.99)">Add to Cart</a>
+  <img src="img/foursweat.jpg.jfif" alt="four sweater">
+</a>          <h3>schoenen</h3>
+          <p>€49.99</p>
+          <a href="#" class="btn" onclick="addToCart('Product 2', 49.99)">Add to Cart</a>
+        </div>
+
+        <div class="product">
+        <a href="detailproduct.php" target="_blank">
+  <img src="img/foursweater.jpg.jfif" alt="four sweater">
+</a>          <h3>muts</h3>
+          <p>€49.99</p>
+          <a href="#" class="btn" onclick="addToCart('Product 3', 49.99)">Add to Cart</a>
+        </div>
+
+        <div class="product">
+        <a href="detailproduct.php" target="_blank">
+  <img src="img/foursweater.jpg.jfif" alt="four sweater">
+</a>          <h3>onderbroek</h3>
+          <p>€49.99</p>
+          <a href="#" class="btn" onclick="addToCart('Product 4', 49.99)">Add to Cart</a>
         </div>
 
         <div class="product">
         <a href="detailproduct.php" target="_blank">
   <img src="img/1.jpg" alt="Girl in a jacket">
-</a>          <h3>Product 1</h3>
-          <p>$49.99</p>
-          <a href="#" class="btn" onclick="addToCart('Product 1', 49.99)">Add to Cart</a>
+</a>          <h3>sandalen</h3>
+          <p>€49.99</p>
+          <a href="#" class="btn" onclick="addToCart('Product 5', 49.99)">Add to Cart</a>
         </div>
 
         <div class="product">
         <a href="detailproduct.php" target="_blank">
   <img src="img/1.jpg" alt="Girl in a jacket">
-</a>          <h3>Product 1</h3>
-          <p>$49.99</p>
-          <a href="#" class="btn" onclick="addToCart('Product 1', 49.99)">Add to Cart</a>
+</a>          <h3>BH</h3>
+          <p>€49.99</p>
+          <a href="#" class="btn" onclick="addToCart('Product 6', 49.99)">Add to Cart</a>
         </div>
 
         <div class="product">
         <a href="detailproduct.php" target="_blank">
   <img src="img/1.jpg" alt="Girl in a jacket">
-</a>          <h3>Product 1</h3>
-          <p>$49.99</p>
-          <a href="#" class="btn" onclick="addToCart('Product 1', 49.99)">Add to Cart</a>
+</a>          <h3>bril</h3>
+          <p>€49.99</p>
+          <a href="#" class="btn" onclick="addToCart('Product 7', 49.99)">Add to Cart</a>
         </div>
 
         <div class="product">
         <a href="detailproduct.php" target="_blank">
   <img src="img/1.jpg" alt="Girl in a jacket">
-</a>          <h3>Product 1</h3>
-          <p>$49.99</p>
-          <a href="#" class="btn" onclick="addToCart('Product 1', 49.99)">Add to Cart</a>
+</a>          <h3>ketting</h3>
+          <p>€49.99</p>
+          <a href="#" class="btn" onclick="addToCart('Product 8', 49.99)">Add to Cart</a>
         </div>
 
         <div class="product">
         <a href="detailproduct.php" target="_blank">
   <img src="img/1.jpg" alt="Girl in a jacket">
-</a>          <h3>Product 1</h3>
-          <p>$49.99</p>
-          <a href="#" class="btn" onclick="addToCart('Product 1', 49.99)">Add to Cart</a>
+</a>          <h3>laarzen</h3>
+          <p>€49.99</p>
+          <a href="#" class="btn" onclick="addToCart('Product 9', 49.99)">Add to Cart</a>
         </div>
 
         <div class="product">
         <a href="detailproduct.php" target="_blank">
   <img src="img/1.jpg" alt="Girl in a jacket">
-</a>          <h3>Product 1</h3>
-          <p>$49.99</p>
-          <a href="#" class="btn" onclick="addToCart('Product 1', 49.99)">Add to Cart</a>
-        </div>
-
-        <div class="product">
-        <a href="detailproduct.php" target="_blank">
-  <img src="img/1.jpg" alt="Girl in a jacket">
-</a>          <h3>Product 1</h3>
-          <p>$49.99</p>
-          <a href="#" class="btn" onclick="addToCart('Product 1', 49.99)">Add to Cart</a>
-        </div>
-
-        <div class="product">
-        <a href="detailproduct.php" target="_blank">
-  <img src="img/1.jpg" alt="Girl in a jacket">
-</a>          <h3>Product 1</h3>
-          <p>$49.99</p>
-          <a href="#" class="btn" onclick="addToCart('Product 1', 49.99)">Add to Cart</a>
+</a>          <h3>Trui</h3>
+          <p>€49.99</p>
+          <a href="#" class="btn" onclick="addToCart('Product 10', 49.99)">Add to Cart</a>
         </div>
 
         <div class="product">
         <a href="detailproduct.php" target="_blank">
   <img src="img/2.jpg" alt="Girl in a jacket">
 </a>
-          <h3>Product 2</h3>
-          <p>$29.99</p>
-          <a href="#" class="btn" onclick="addToCart('Product 2', 29.99)">Add to Cart</a>
+          <h3>Bloes</h3>
+          <p>€29.99</p>
+          <a href="#" class="btn" onclick="addToCart('Product 11', 29.99)">Add to Cart</a>
         </div>
 
         <div class="product">
         <a href="detailproduct.php" target="_blank">
   <img src="img/3.jpg" alt="Girl in a jacket">
-</a>          <h3>Product 3</h3>
-          <p>$19.99</p>
-          <a href="#" class="btn" onclick="addToCart('Product 3', 19.99)">Add to Cart</a>
-        </div>
+</a>          <h3>handschoen</h3>
+          <p>€19.99</p>
+          <a href="#" class="btn" onclick="addToCart('Product 12', 19.99)">Add to Cart</a>
+        </div> -->
       </div>
     </section>
 
@@ -180,8 +164,10 @@
     <a href="order.php" class="btn" onclick="storeOrderSummary()">Buy Now</a>
   </div>
   <div class="cart-toggle" onclick="toggleCart()">&times;</div>
+  <button onclick="resetCart()">Reset Cart</button>
+
 </div>
- 
 </body>
 </html>
+
 <script src="main.js"></script>
