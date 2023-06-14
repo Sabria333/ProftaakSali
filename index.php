@@ -39,12 +39,12 @@
       </div>
     </section>
 
-    <section class="hero">
+    <!-- <section class="hero">
       <img src="img/index.jpg" alt="">
       <h1 class="indexword">Welcome to our Clothing Webshop</h1>
       <p>Shop for the latest fashion trends and styles</p>
       <a href="#" class="btnshop">Shop Now</a>
-    </section>
+    </section> -->
 
     <section>
       <h2>Categories</h2>
@@ -153,8 +153,8 @@
     </div>
 
     <section class="newsletter">
-      <h2>Be part of the family</h2>
-      <p>Sign up for our newsletter and receive 10% discount on your first order!</p>
+      <h2 class="h2abbo">Be part of the family</h2>
+      <p class="pabbo">Sign up for our newsletter and receive 10% discount on your first order!</p>
       <form action="#" method="POST">
         <input type="email" name="email" placeholder="Enter your email">
         <button type="submit" class="btn">Abonneer</button>

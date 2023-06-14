@@ -1,9 +1,9 @@
 const buttons = document.querySelectorAll("[data-carousel-button]")
 const nextBtn = document.querySelector('[data-carousel-button="next"]');
 
-// setInterval(() => {
-//   nextBtn.click();
-// }, 2500);
+setInterval(() => {
+  nextBtn.click();
+}, 2500);
 
 buttons.forEach(button => {
   button.addEventListener("click", () => {

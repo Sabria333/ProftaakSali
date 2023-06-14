@@ -1,84 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
- <title>About</title>
-  <link rel="stylesheet" href="css/stylesheet.css">
+  <title>Contact Us | Clothing Webshop</title>
+  <link rel="stylesheet" type="text/css" href="css/stylecontact.css">
 </head>
 <body>
 <?php 
 include "inc/nav.php";
 ?>
-  <section class="about-us">
-    <div class="about">
-      <div class="text">
-        <h2>Ons merk</h2>
-        <h5>Sali since 2023 <span>Liridon Berisha & Sabria El Khadir</span></h5>
-          <p>Sali is een exclusief merk wat is opgericht in 2020. Twee creatieve studenten
-             brachten hun creaties en ideeen samen in de lockdown van 2020. Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-            Expedita natus ad sed harum itaque ullam enim quas, veniam accusantium,
-             quia animi id eos adipisci iusto molestias asperiores explicabo cum vero 
-             atque amet corporis! Soluta illum facere consequuntur magni. Ullam dolorem 
-             repudiandae cumque voluptate consequatur consectetur, eos provident necessitatibus reiciendis corrupti!</p>
-        <div class="data">
-        <a href="contact.php" class="hire">Contact opnemen</a>
-        </div>
-      </div>
-    </div>
-  </section>
+  <main>
+    <h1>About Us</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, neque quis tristique bibendum, ipsum lectus aliquet nunc, vel vulputate quam risus sit amet lacus. Suspendisse gravida, sem eu tristique commodo, nibh nibh luctus est, ac sollicitudin tellus risus vel velit. Nulla facilisi. Vivamus pretium nisi a luctus posuere. Sed pellentesque urna a risus vulputate, ut ullamcorper lacus tincidunt. Sed gravida tortor enim, vel bibendum ex cursus ac. Praesent lacinia elit in elit scelerisque, sit amet accumsan sapien pulvinar.</p>
+    <p>Donec consectetur lacus ut semper bibendum. Suspendisse non risus ut lectus tristique auctor eu vel risus. Duis auctor, mauris id lobortis convallis, urna enim vestibulum tortor, vel tristique nulla risus at nunc. Aliquam suscipit, lorem eget feugiat gravida, lorem tellus imperdiet eros, eu auctor quam tortor vel libero. Proin efficitur mauris nec ligula sagittis vehicula. Aenean sodales neque vel suscipit efficitur. Pellentesque condimentum sem in nisi interdum rhoncus. Nam aliquam risus ac felis mattis pulvinar. Nulla facilisi. Pellentesque pharetra congue nisi a hendrerit. Nulla non tortor non metus varius vestibulum. In hac habitasse platea dictumst. Suspendisse tincidunt leo vel nisl dignissim, vel tempus elit bibendum. Sed sed libero tincidunt, elementum nunc in, lacinia metus. Nullam non tortor non libero maximus ornare vel ac augue.</p>
+  </main>
 
-  <!-- Bijen animatie js -->
-  <div class="container">
-      <div class="wings"></div>
-      <div class="bee">
-        <div class="shine"></div>
-      </div>
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2023 My Clothing Shop</p>
+      <ul class="social-icons">
+        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+      </ul>
     </div>
-
-    <h1 class="whoare"> Wie zijn wij</h1>
-    <div class="wrapper">
-    <div class="our_team">
-        <div class="team_member">
-          <div class="member_img">
-             <img src="img/baviaan.jpg" alt="">
-            <div class="social_media">
-               <div class="facebook item"><i class="fab fa-facebook-f"></i></div>
-               <div class="twitter item"><i class="fab fa-twitter"></i></div>
-               <div class="instagram item"><i class="fab fa-instagram"></i></div>
-             </div>
-          </div>
-          <h3>Liridon Berisha</h3>
-          <span>Assistent</span>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione perspiciatis, error deleniti quaerat beatae doloribus incidunt excepturi. Fugit deleniti accusantium neque hic quidem voluptatibus cumque.</p>
-        </div>
-        <div class="team_member">
-           <div class="member_img">
-             <img src="img/sabria.jpg" alt="">
-             <div class="social_media">
-               <div class="facebook item"><i class="fab fa-facebook-f"></i></div>
-               <div class="twitter item"><i class="fab fa-twitter"></i></div>
-               <div class="instagram item"><i class="fab fa-instagram"></i></div>
-             </div>
-          </div>
-          <h3>Sabria El Khadir</h3>
-          <span>CEO</span>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-             Dolores maiores temporibus, architecto optio asperiores mollitia 
-             pariatur error, quaerat voluptatibus minima eos quo nostrum, maxime necessitatibus.</p>
-      </div>
+  </footer>
 </body>
 </html>
-
- <!--FOOTER-->
- <footer>
-		<div class="footer-content">
-			<p>&copy; My Clothing Store 2023</p>
-			<ul class="social-icons">
-				<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-				<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-				<li><a href="#"><i class="fa fa-instagram"></i></a></li>
-			</ul>
-		</div>
-	</footer>
+<script src="main.js"></script>

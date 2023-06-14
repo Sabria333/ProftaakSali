@@ -1,28 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>contact </title>
+  <title>Log In | Clothing Webshop</title>
   <link rel="stylesheet" type="text/css" href="css/stylecontact.css">
 </head>
 <body>
 <?php 
 include "inc/nav.php";
+
 ?>
+
   <main>
   <h1>Contact Us</h1>
+
+
     <div class="container-contact">
       <div class="left-contact">
-    
+      
         <div class="contact-info">
           <h2>Address:</h2>
           <p>123 Main St</p>
-          <p>Anytown, USA 12345</p>
+          <p>Helmond, NL 12345</p>
 
           <h2>Phone:</h2>
           <p>1-800-123-4567</p>
 
           <h2>Email:</h2>
           <p>info@clothingwebshop.com</p>
+
           <p></p>
         </div>
 
@@ -41,9 +46,9 @@ include "inc/nav.php";
       </div>
 
       <div class="right-contact">
-        <img src="/img/1.jpg" alt="Image 1">
-        <img src="/img/2.jpg" alt="Image 2">
-        <img src="/img/3.jpg" alt="Image 3">
+        <img src="img/1.jpg" alt="Girl in a jacket" >
+        <img src="img/2.jpg" alt="Girl in a jacket" >
+        <img src="img/3.jpg" alt="Girl in a jacket" >
       </div>
   </main>
 
@@ -65,3 +70,4 @@ include "inc/nav.php";
   </footer>
 </body>
 </html>
+<script src="main.js"></script>

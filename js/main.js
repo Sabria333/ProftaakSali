@@ -1,21 +1,39 @@
 let cartItems = [];
+let cartCount = 0;
 const cartElement = document.getElementById('cart');
 const cartToggleElement = document.querySelector('.cart-toggle');
 const navCartCountElement = document.getElementById('nav-cart-count');
 
-function addToCart(productName, price) {
-  const sizeSelectElement = document.getElementById('size');
-  const selectedSize = sizeSelectElement.value; // Get the selected size
+// Load cart from localStorage when the page loads
+window.addEventListener('load', function() {
+  const savedCartItems = localStorage.getItem('cartItems');
+  if (savedCartItems) {
+    cartItems = JSON.parse(savedCartItems);
+    updateCart();
+  }
 
+  const savedCartCount = localStorage.getItem('cartCount');
+  if (savedCartCount) {
+    cartCount = parseInt(savedCartCount);
+    updateCartCount();
+  }
+});
+
+function addToCart(productName, price) {
   const cartItem = {
     name: productName,
-    price: price,
-    size: selectedSize // Save the selected size in the cart item
+    price: price
   };
 
   cartItems.push(cartItem);
   updateCart();
   toggleCart();
+  cartCount++;
+  updateCartCount();
+
+  // Save cart to localStorage
+  localStorage.setItem('cartItems', JSON.stringify(cartItems));
+  localStorage.setItem('cartCount', cartCount.toString());
 }
 
 function updateCart() {
@@ -24,10 +42,10 @@ function updateCart() {
 
   let totalPrice = 0;
 
-cartItems.forEach(function(item) {
+  cartItems.forEach(function(item) {
     const itemElement = document.createElement('div');
     itemElement.className = 'cart-item';
-    itemElement.innerHTML = `<span>${item.name} - Size: ${item.size} - $${item.price}</span><button onclick="removeFromCart('${item.name}')">Remove</button>`;
+    itemElement.innerHTML = `<span>${item.name} - $${item.price}</span><button onclick="removeFromCart('${item.name}')">Remove</button>`;
     cartItemsElement.appendChild(itemElement);
 
     totalPrice += item.price;
@@ -36,7 +54,8 @@ cartItems.forEach(function(item) {
   const cartTotalElement = document.getElementById('cart-total');
   cartTotalElement.textContent = `Total: $${totalPrice.toFixed(2)}`;
 
-  navCartCountElement.textContent = cartItems.length;
+  // Save cart to localStorage
+  localStorage.setItem('cartItems', JSON.stringify(cartItems));
 }
 
 function removeFromCart(productName) {
@@ -45,21 +64,27 @@ function removeFromCart(productName) {
   });
 
   updateCart();
+  cartCount--;
+  updateCartCount();
+
+  // Save cart to localStorage
+  localStorage.setItem('cartItems', JSON.stringify(cartItems));
+  localStorage.setItem('cartCount', cartCount.toString());
 }
 
 function toggleCart() {
   cartElement.classList.toggle('open');
 }
 
-function storeOrderSummary() {
-  let orderSummary = '';
-  let totalPrice = 0;
+function updateCartCount() {
+  navCartCountElement.textContent = cartCount.toString();
+}
 
-  cartItems.forEach(function(item) {
-    orderSummary += `${item.name} - Size: ${item.size} - $${item.price.toFixed(2)}<br>`;
-    totalPrice += item.price;
-  });
-
-  localStorage.setItem('orderSummary', orderSummary);
-  localStorage.setItem('orderTotal', totalPrice.toFixed(2));
+function resetCart() {
+  cartItems = [];
+  cartCount = 0;
+  updateCart();
+  updateCartCount();
+  localStorage.removeItem('cartItems');
+  localStorage.removeItem('cartCount');
 }
