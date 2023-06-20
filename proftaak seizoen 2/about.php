@@ -33,7 +33,7 @@ include "inc/function.php";
   <div id="cart-items"></div>
   <div class="cart-total" id="cart-total"></div>
   <div class="buy-now-btn">
-    <a href="order.php" class="btn" onclick="storeOrderSummary()">Buy Now</a>
+  <a href="order.php" class="btn" onclick="storeOrderSummary()">Buy Now</a>
   </div>
   <div class="cart-toggle" onclick="toggleCart()">&times;</div>
   <button onclick="resetCart()">Reset Cart</button>

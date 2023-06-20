@@ -1,53 +1,3 @@
-<<<<<<< Updated upstream
-<?php
-function dd($s)
-{
-    echo '<pre>' . var_dump($s) . '</pre>';
-}
-
-dd($_POST);
-
-
-function db()
-{
-    $servername = "localhost";
-    $database = "pt2";
-    $username = "root";
-    $password = "";
-    
-    // create connection
-    $conn = mysqli_connect($servername, $username, $password, $database);
-    
-    // check connection
-    if(mysqli_connect_error()) 
-    {
-        die("database connection failed: " . mysqli_connect_error());
-    }
-    return $conn;
-}
-
-function registerUser()
-{
-    $conn = db();
-    extract($_POST);
-
-    $sql = "INSERT INTO `user` (`userEmail`, `userPassword`, `userRegisterDate`) VALUES ('" . $email . "','" . $password . "', NOW())";
-
-
-    if(!empty($email) && !empty($password))
-    {
-        if($conn->query($sql)) 
-        {
-            echo "new record created successfully";
-        } 
-        else 
-        {
-            echo "error: " . $sql . "<br>" . $conn->error;
-        }    
-    }
-    $conn->close();
-}
-=======
 <?php
 
 
@@ -176,6 +126,8 @@ function getCurrentURL()
     return $actual_link;
 }
 
+
+
 function navbar()
 {
     session_start();
@@ -206,6 +158,7 @@ function navbar()
     }
 
     $output .= '<li class="nav-cart">
+    
                   <a href="#" onclick="toggleCart()">
                     <img src="img/cart.jpg" alt="Cart" class="cart-image">
                     <span class="nav-cart-count" id="nav-cart-count">0</span>
@@ -225,6 +178,33 @@ function navbar()
 }
 
 
+
+function process_order($connection)
+{
+  // Retrieve form data
+  $name = $_POST['name'];
+  $email = $_POST['email'];
+  $address = $_POST['address'];
+  $productName = ""; // Get the product name from the form submission
+  $productPrice = ""; // Get the product price from the form submission
+
+  // Insert data into the database
+  $query = "INSERT INTO orders (orderStatus, orderDate, userId) VALUES ('Pending', NOW())";
+
+  $result = mysqli_query($connection, $query);
+
+  if ($result) {
+    // Order inserted successfully
+    echo "Order placed successfully!";
+  } else {
+    // Error in inserting order
+    echo "Error placing the order. Please try again.";
+  }
+
+  mysqli_close($connection);
+}
+
+
 function getProducts()
 {
     // connect to database
@@ -237,6 +217,7 @@ function getProducts()
     // return data
     return $products;
 }
+
 function getProduct()
 {
     $productId = $_GET['productId'];
@@ -253,5 +234,4 @@ function getProduct()
 
 
 echo navbar();
->>>>>>> Stashed changes
 ?>

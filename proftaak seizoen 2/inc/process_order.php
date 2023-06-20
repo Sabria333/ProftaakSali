@@ -10,7 +10,7 @@ $productName = ""; // Get the product name from the form submission
 $productPrice = ""; // Get the product price from the form submission
 
 // Insert data into the database
-$query = "INSERT INTO orders (orderName, orderPrice, orderEmail, orderAddress, orderStatus) VALUES ('$productName', '$productPrice', '$email', '$address', 'Pending')";
+$query = "INSERT INTO orders (orderStatus, orderDate, userId) VALUES ('Pending', NOW())";
 
 $result = mysqli_query($connection, $query);
 
